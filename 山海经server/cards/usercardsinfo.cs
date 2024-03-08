@@ -44,13 +44,24 @@ namespace server.cards
                 {
                     server.session1.Send("opposite cardsum " + user2cardsum.ToString());
                     server.session1.Send("round " + maindata.round + " " + maindata.user1round);
+                    string mes = "";
+                    for(int i = 0; i < 8; i++)
+                    {
+                        mes = mes + user1cards[i].ToString()+" ";
+                    }
+                    server.session1.Send("handcards "+mes);
                 }
                 catch { }
                 try
                 {
                     server.session2.Send("opposite cardsum " + user1cardsum.ToString());
                     server.session2.Send("round " + maindata.round + " " + maindata.user2round);
-
+                    string mes = "";
+                    for (int i = 0; i < 8; i++)
+                    {
+                        mes = mes + user2cards[i].ToString() + " ";
+                    }
+                    server.session2.Send("handcards " + mes);
                 }
                 catch { }
 

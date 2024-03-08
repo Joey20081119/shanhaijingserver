@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace server.servermain
@@ -11,7 +12,7 @@ namespace server.servermain
     {
         public static void Main4()
         {
-            while (maindata.user1connect && maindata.user2connect)
+            while (!maindata.user1connect || !maindata.user2connect)
             {
 
             }
