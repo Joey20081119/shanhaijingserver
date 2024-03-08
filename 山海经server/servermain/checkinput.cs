@@ -109,8 +109,35 @@ namespace server.servermain
             }
             else if (key == "nextround")
             {
-                
-                
+                if(user==1&&maindata.user1round)
+                {
+                    maindata.user1round = false;
+                    maindata.qinglong.moved = false;
+                    maindata.baihu.moved = false;
+                    maindata.zhuque.moved = false;
+                    maindata.xuanwu.moved = false;
+                    maindata.user2round = true;
+                    maindata.hundun.moved = true;
+                    maindata.qiongqi.moved = true;
+                    maindata.taowu.moved = true;
+                    maindata.taotie.moved = true;
+                    check(server.session1, "getacard", "0", 1);
+                }
+                else if (user == 2 && maindata.user2round)
+                {
+                    maindata.user1round = true;
+                    maindata.qinglong.moved = true;
+                    maindata.baihu.moved = true;
+                    maindata.zhuque.moved = true;
+                    maindata.xuanwu.moved = true;
+                    maindata.user2round = false;
+                    maindata.hundun.moved = false;
+                    maindata.qiongqi.moved = false;
+                    maindata.taowu.moved = false;
+                    maindata.taotie.moved = false;
+                    maindata.round++;
+                    check(server.session2, "getacard", "0", 2);
+                }
             }
             return output;
         }

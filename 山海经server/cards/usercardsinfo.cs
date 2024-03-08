@@ -1,4 +1,5 @@
-﻿using System;
+﻿using server.data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,11 +43,14 @@ namespace server.cards
                 try
                 {
                     server.session1.Send("opposite cardsum " + user2cardsum.ToString());
+                    server.session1.Send("round " + maindata.round + " " + maindata.user1round);
                 }
                 catch { }
                 try
                 {
                     server.session2.Send("opposite cardsum " + user1cardsum.ToString());
+                    server.session2.Send("round " + maindata.round + " " + maindata.user2round);
+
                 }
                 catch { }
 

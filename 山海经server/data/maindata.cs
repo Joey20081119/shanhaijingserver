@@ -139,7 +139,7 @@ namespace server.data
         public int x = 0;
         public int y = 0;
         public string xy = "0 0";
-        public bool moved=true;
+        public bool moved=false;
 
         public void user1senddata(AppSession session)
         {

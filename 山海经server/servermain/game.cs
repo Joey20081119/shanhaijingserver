@@ -18,7 +18,10 @@ namespace server.servermain
             Console.WriteLine("游戏开始！");
             maindata.round = 1;
             maindata.user1round = true;
-
+            maindata.qinglong.moved = true;
+            maindata.baihu.moved = true;
+            maindata.zhuque.moved = true;
+            maindata.xuanwu.moved = true;
         }
     }
 }
