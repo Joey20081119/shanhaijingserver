@@ -121,7 +121,7 @@ namespace server.servermain
                     maindata.qiongqi.moved = true;
                     maindata.taowu.moved = true;
                     maindata.taotie.moved = true;
-                    check(server.session1, "getacard", "0", 1);
+                    check(server.session2, "getacard", "0", 2);
                 }
                 else if (user == 2 && maindata.user2round)
                 {
@@ -136,7 +136,7 @@ namespace server.servermain
                     maindata.taowu.moved = false;
                     maindata.taotie.moved = false;
                     maindata.round++;
-                    check(server.session2, "getacard", "0", 2);
+                    check(server.session1, "getacard", "0", 1);
                 }
             }
             return output;

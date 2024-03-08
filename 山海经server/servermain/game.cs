@@ -23,6 +23,13 @@ namespace server.servermain
             maindata.baihu.moved = true;
             maindata.zhuque.moved = true;
             maindata.xuanwu.moved = true;
+            checkinput.check(server.session1, "getacard", "1", 1);
+            checkinput.check(server.session1, "getacard", "2", 1);
+            checkinput.check(server.session1, "getacard", "3", 1);
+            checkinput.check(server.session2, "getacard", "1", 2);
+            checkinput.check(server.session2, "getacard", "2", 2);
+            checkinput.check(server.session2, "getacard", "3", 2);
+
         }
     }
 }
