@@ -11,6 +11,7 @@ namespace 山海经server.servermain
         public static void use(List<string> strings)
         {
 
+
         }
     }
 }
