@@ -68,6 +68,7 @@
     <Compile Include="data\maindata.cs" />
     <Compile Include="data\Trn.cs" />
     <Compile Include="servermain\checkinput.cs" />
+    <Compile Include="servermain\game.cs" />
     <Compile Include="servermain\server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="servermain\usecard.cs" />

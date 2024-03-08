@@ -24,7 +24,7 @@ namespace server
 
         static void Main()
         {
-            Parallel.Invoke(Main1, usercardsinfo.Main2,maindata.Main3);
+            Parallel.Invoke(Main1, usercardsinfo.Main2,maindata.Main3,game.Main4);
         }
         static void Main1()
         {
@@ -80,12 +80,14 @@ namespace server
         private static void AppServer2_SessionClosed(AppSession session, CloseReason value)
         {
             Console.WriteLine("客户端2已断开！客户端ip：" + session.RemoteEndPoint.ToString() + value);
+            maindata.user2connect = false;
         }
 
         private static void AppServer2_NewSessionConnected(AppSession session)
         {
             session2 = session;
             Console.WriteLine("客户端2已连接！客户端ip：" + session.RemoteEndPoint.ToString());
+            maindata.user2connect = true;
             while (true)
             {
                 for (int i = 0; i < 58; i++)
@@ -111,12 +113,14 @@ namespace server
         private static void AppServer1_SessionClosed(AppSession session, CloseReason value)
         {
             Console.WriteLine("客户端1已断开！客户端ip：" + session.RemoteEndPoint.ToString()+value);
+            maindata.user1connect = false;
         }
 
         private static void AppServer1_NewSessionConnected(AppSession session)
         {
             session1 = session;
             Console.WriteLine("客户端1已连接！客户端ip："+session.RemoteEndPoint.ToString());
+            maindata.user1connect = true;
             while(true)
             {
                 for (int i = 0; i < 58; i++)

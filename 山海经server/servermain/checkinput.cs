@@ -4,6 +4,7 @@ using SuperSocket.SocketBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using 山海经server.servermain;
@@ -106,9 +107,10 @@ namespace server.servermain
                 List<string> strings = body.Split(new char[] { char.Parse(" ") }, StringSplitOptions.RemoveEmptyEntries).ToList();
                 usecard.use(strings);
             }
-            else if (key == "")
+            else if (key == "nextround")
             {
-
+                
+                
             }
             return output;
         }

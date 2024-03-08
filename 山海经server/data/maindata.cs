@@ -17,6 +17,11 @@ namespace server.data
         public static shenshouAttribute qiongqi = new shenshouAttribute();
         public static shenshouAttribute taowu = new shenshouAttribute();
         public static shenshouAttribute taotie = new shenshouAttribute();
+        public static bool user1round= false;
+        public static bool user2round = false;
+        public static int round = 0;
+        public static bool user1connect= false;
+        public static bool user2connect= false;
         public static void Main3()
         {
             qinglong.name1 = "qinglong";
