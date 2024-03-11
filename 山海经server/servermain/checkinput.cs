@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using 山海经server.servermain;
+using server.servermain;
 
 namespace server.servermain
 {
@@ -105,7 +105,7 @@ namespace server.servermain
             else if (key == "usecard")
             {
                 List<string> strings = body.Split(new char[] { char.Parse(" ") }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                usecard.use(strings);
+                usecard.use(strings,user);
             }
             else if (key == "nextround")
             {
@@ -121,6 +121,7 @@ namespace server.servermain
                     maindata.qiongqi.moved = true;
                     maindata.taowu.moved = true;
                     maindata.taotie.moved = true;
+                    Console.WriteLine("进入第" + maindata.round + "回合下半");
                     check(server.session2, "getacard", "0", 2);
                 }
                 else if (user == 2 && maindata.user2round)
@@ -135,8 +136,9 @@ namespace server.servermain
                     maindata.qiongqi.moved = false;
                     maindata.taowu.moved = false;
                     maindata.taotie.moved = false;
-                    maindata.round++;
                     check(server.session1, "getacard", "0", 1);
+                    maindata.round++;
+                    Console.WriteLine("进入第" + maindata.round + "回合上半");
                 }
             }
             return output;

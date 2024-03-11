@@ -1,4 +1,5 @@
-﻿using SuperSocket.SocketBase;
+﻿using server.cards;
+using SuperSocket.SocketBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -148,6 +149,38 @@ namespace server.data
         public void user2senddata(AppSession session)
         {
             session.Send("shenshou" + " " + name2 + " " + maxhealth + " " + health + " " + damage + " " + speed + " " + armor + " " + misspercent + " " + (9-x)+" "+(9-y)+" "+moved);
+        }
+        public string damaged(int dmg,string who)
+        {
+            string output=null;
+            if (dmg - armor < 1)
+            {
+                dmg = 1;
+            }
+            else
+            {
+                dmg = dmg - armor;
+            }
+
+            if (RandomNumberGenerator.GenerateRandomNumber(0, 100) <= misspercent)
+            {
+                Console.WriteLine(name1 + "闪避了来自" + who + "的伤害");
+                output = "miss";
+            }
+            else 
+            {
+                Console.WriteLine(who + "对" + name1 + "造成了" + dmg + "点伤害");
+                health = health - dmg;
+                output = dmg.ToString();
+            }
+
+
+            return output;
+        }
+
+        public void healthed()
+        {
+
         }
 
     }
